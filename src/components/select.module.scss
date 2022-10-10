@@ -1,0 +1,118 @@
+$base-color: #777;
+$selected: #AAA;
+$accent: rgb(239, 239, 239);
+$danger: orangered;
+$accentSelected: rgb(104, 124, 104);
+$accentHighlighted: rgb(185, 185, 185);
+
+.container {
+  font-family: sans-serif;
+  position: relative;
+  width: 95%;
+  min-height: 1.5em;
+  border: 0.03em solid $base-color;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  outline: none;
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: $base-color;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.25em;
+}
+
+.clear-btn:focus, .clear-btn:hover {
+  color: $danger;
+}
+
+.divider {
+  background-color: $base-color;
+  width: 0.05em;
+  align-self: stretch;
+}
+
+.caret {
+  translate: 0 25%;
+  border:transparent solid 0.25em;
+  border-top-color: $base-color;
+}
+
+.caret:hover {
+  border-top-color: $accentHighlighted;
+}
+
+.options {
+  position: absolute;
+  max-height: 15em;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  border: $base-color 0.05em solid;
+  border-radius: 0.25em;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 0.25em);
+  z-index: 100;
+}
+
+.options.shown {
+  display: block;
+}
+
+.option {
+  padding: 0.25em .5em;
+  cursor: pointer;
+  background-color: $accent;
+}
+
+.selected {
+  background-color: $accentSelected;
+  font-weight: bolder;
+}
+
+.highlighted {
+  background-color: $accentHighlighted;
+}
+
+.option-badge {
+  display: flex;
+  align-items: center;
+  border: $base-color solid 0.05em;
+  border-radius: 0.25em;
+  padding: 0.25em;
+  gap: 0.25em;
+  background: none;
+  outline: none;
+}
+
+.option-badge:hover, .option-badge:focus {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-color: $danger;
+}
+
+.option-badge > .remove-btn, 
+.option-badge > .remove-btn {
+  font-size: 1.3em;
+}
+
+.option-badge:hover > .remove-btn, 
+.option-badge:focus > .remove-btn {
+  color: $danger;
+}
